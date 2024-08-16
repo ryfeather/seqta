@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Games</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <img src="feather.png" alt="Logo" class="logo">
+    <div class="container">
+        <h1>2D Games</h1>
+        <ul>
+            <li><a href="pong.html">Pong</a></li>
+            <li><a href="snake.html">Snake</a></li>
+            <li><a href="tic-tac-toe.html">Tic-Tac-Toe</a></li>
+            <li><a href="breakout.html">Breakout</a></li>
+            <li><a href="memory-game.html">Memory Game</a></li>
+            <li><a href="flappy-bird.html">Flappy Bird</a></li>
+            <li><a href="space-invaders.html">Space Invaders</a></li>
+            <li><a href="tetris.html">Tetris</a></li>
+            <li><a href="two-player-connect-four.html">Connect Four</a></li>
+            <li><a href="minesweeper.html">Minesweeper</a></li>
+        </ul>
+    </div>
+    <script>
+        function openGame(gameUrl) {
+            var newWindow = window.open('about:blank', '_blank');
+            fetch(gameUrl)
+                .then(response => response.text())
+                .then(data => {
+                    newWindow.document.write(data);
+                    newWindow.document.close();
+                })
+                .catch(error => console.error('Error loading game:', error));
+        }
+    </script>
+</body>
+</html>
